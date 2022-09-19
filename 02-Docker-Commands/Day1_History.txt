@@ -62,3 +62,63 @@
    65  history 
    66  history >> Day1_History.txt 
 ```
+
+```
+   73  docker ps 
+   74  docker ps -a 
+   75  docker run -it ubuntu 
+   76  docker ps 
+   77  docker ps -a 
+   78  docker ps -l 
+   79  docker start d6f3e083b774
+   80  docker ps -l 
+   81  ls
+   82  docker ps 
+   83  docker run -it --name job1 ubuntu:16.04 
+   84  docker ps 
+   85  docker stop job1
+   86  docker ps 
+   87  docker strt job1
+   88  docker start job1
+   89  docker ps 
+   90  docker attach sleepy_darwin
+   91* 
+   92  docker ps 
+   93  docker ps -a
+   94  docker rm 060b1b89ffd1
+   95  docker ps -a
+   96  docker ps -aq
+   97  docker rm $(docker ps -qa) 
+   98  docker ps -a 
+   99  docker images 
+  100  docker run -it --name job2 ubuntu:16.04 
+  101  docker ps 
+  102  docker run -it --name job3 ubuntu:16.04 
+  103  docker ps 
+  104  docker run -itd --name job4 ubuntu:16.04 
+  105  docker ps 
+  106  docker run -itd --name job5 ubuntu:16.04 
+  107  docker run -itd --name job6 ubuntu:16.04 
+  108  docker attach job6
+  109  docker ps 
+  110  docker inspect job6
+  111  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}} job6
+  112  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' job6
+  113  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -qa)
+  114  docker kill job5 
+  115  docker run -itd --name job7 ubuntu:16.04 
+  116  docker start job5 
+  117  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -qa)
+  118  docker ps 
+  119  docker images 
+  120  docker run -d --name web-app1 amitvashist7/k8s-tiny-web:3 
+  121  docker ps 
+  122  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -qa)
+  123  curl 172.17.0.9
+  124  ls
+  125  cd 02-Docker-Commands/
+  126  s
+  127  ls
+  128  cat Day1_History.txt 
+  129  history >> Day1_History.txt 
+```
