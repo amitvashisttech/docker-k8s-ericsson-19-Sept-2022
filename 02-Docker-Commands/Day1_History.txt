@@ -122,3 +122,174 @@
   128  cat Day1_History.txt 
   129  history >> Day1_History.txt 
 ```
+
+# Docker Images & File
+```
+  139  cd 03-Dockerfiles/
+  140  ls
+  141  mkdir apache/v1 -p 
+  142  ls
+  143  cd apache/v1/
+  144  ls
+  145  vim Dockerfile
+  146  ls
+  147  docker build -t myapache:v1 . 
+  148  docker ls 
+  149  ls
+  150  docker images 
+  151  docker run -d --name test-apache-1 myapache:v1 
+  152  docker ps 
+  153  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -qa)
+  154  curl 172.17.0.10
+  155  docker run -d --name test-apache-2 myapache
+  156  ls
+  157  cd ..
+  158  ls
+  159  cp -rf v1 v2
+  160  ls
+  161  cd v2/
+  162  ls
+  163  vim index.html 
+  164  ls
+  165  curl 172.17.0.10
+  166  ls
+  167  vim Dockerfile 
+  168  ls
+  169  docker build -t myapache:v2 . 
+  170  docker images 
+  171  docker run -d --name test-apache-3 myapache:v2
+  172  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -qa)
+  173  curl 172.17.0.10
+  174  curl 172.17.0.12
+  175  curl 172.17.0.13
+  176  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -qa)
+  177  curl 172.17.0.11
+  178  s
+  179  cd ..
+  180  ls
+  181  curl 172.17.0.11
+  182  curl -vv 172.17.0.11
+  183  ls
+  184  cp -rf v2 v3 
+  185  ls
+  186  cd v3/
+  187  ls
+  188  vim Dockerfile 
+  189  vim ports.conf
+  190  ls
+  191  docker build -t myapache:v3 . 
+  192  docker run -d --name test-apache-4 myapache:v2
+  193  curl -vv 172.17.0.10
+  194  curl -vv 172.17.0.11
+  195  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -qa)
+  196  curl -vv 172.17.0.12
+  197  ls
+  198  docker run -d --name test-apache-5 myapache:v3
+  199  curl -vv 172.17.0.13
+  200  curl -vv 172.17.0.13:8081
+  201  curl 172.17.0.13:8081
+  202  ls
+  203  cd ..
+  204  ls
+  205  cp -rf v3 v4 
+  206  ls
+  207  cd v4/
+  208  ls
+  209  vim Dockerfile 
+  210  ls
+  211  vim index.html 
+  212  ls
+  213  docker build -t myapache:v4 . 
+  214  docker run -d --name test-apache-6 myapache:v4
+  215  docker ps 
+  216  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -qa)
+  217  curl 172.17.0.14:8081
+  218  cat Dockerfile 
+  219  s
+  220  ls
+  221  cd ..
+  222  ls
+  223  cp -rf v4 v5
+  224  s
+  225  ls
+  226  cd v5/
+  227  ls
+  228  vim Dockerfile 
+  229  docker build -t myapache:v5 . 
+  230  docker run -d --name test-apache-7 myapache:v5
+  231  docker ps 
+  232  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -qa)
+  233  curl 172.17.0.15:3306 -vv 
+  234  curl 172.17.0.15:8081 -vv 
+  235  curl 172.17.0.15:8081 
+  236  curl 172.17.0.15:8081/info.html  
+  237  vim Dockerfile 
+  238  cd ..
+  239  git add . ; git commit -m "02-Docker-Commands" ; git push 
+  240  ls
+  241  cd 03-Dockerfiles/
+  242  ls
+  243  cd apache/
+  244  ls
+  245  cp -rf v5 v6 
+  246  ls
+  247  cd v6/
+  248  ls
+  249  vim ports.conf 
+  250  ls
+  251  vim index.html 
+  252  ls
+  253  mv Dockerfile amit-file
+  254  ls
+  255  vim amit-file 
+  256  ls
+  257  docker build -t myapache:v6 . 
+  258  docker build -t myapache:v6 -f amit-file  . 
+  259  docker run -d --name test-apache-8 myapache:v6
+  260  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -qa)
+  261  curl 172.17.0.18:8081
+  262  curl 172.17.0.16:8081
+  263  curl 172.17.0.16:8080
+  264  docker ps 
+  265  vim amit-file 
+  266  docker build -t myapache:v6 -f amit-file  . 
+  267  docker run -d --name test-apache-9 myapache:v6
+  268  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -qa)
+  269  curl 172.17.0.17:8080
+  270  docker ps 
+  271  docker kill $(docker ps -qa) 
+  272  docker images 
+  273  docker rm $(docker ps -qa) 
+  274  docker images 
+  275  docker rmi 3d94764655ab
+  276  docker images 
+  277  docker tag c31b77aea397 myapache:latest
+  278  docker images 
+  279  docker push myapache:latest
+  280  docker login 
+  281  docker push myapache:latest
+  282  docker tag c31b77aea397 amitvashist7/docker-k8s-ericsson-19-sept-2022:latest
+  283  docker images 
+  284  docker push amitvashist7/docker-k8s-ericsson-19-sept-2022
+  285  docker tag dc3670368d1f amitvashist7/docker-k8s-ericsson-19-sept-2022:v5
+  286  docker push amitvashist7/docker-k8s-ericsson-19-sept-2022:v5
+  287  ls
+  288  docker ps -a 
+  289  docker images 
+  290  docker images -q 
+  291  docker rmi $(docker images -q) 
+  292  docker rmi $(docker images -q) --force 
+  293  docker images 
+  294  cd 
+  295  docker run -d --name job1 amitvashist7/docker-k8s-ericsson-19-sept-2022
+  296  docker ps 
+  297  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -qa)
+  298  curl 172.17.0.2:8080
+  299  ls
+  300  cd docker-k8s-ericsson-19-Sept-2022/
+  301  ls
+  302  cd 02-Docker-Commands/
+  303  ls
+  304  cat Day1_History.txt 
+  305  history >> Day1_History.txt 
+```
