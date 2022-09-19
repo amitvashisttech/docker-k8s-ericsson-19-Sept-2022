@@ -1,0 +1,23 @@
+```
+    1  docker version 
+    2  docker run busybox echo "Welcome to the world of Docker."
+    3  docker run busybox echo "Welcome to the world of Docker - Test 2"
+    4  docker run busybox echo "Hello World"
+    5  docker container ls 
+    6  docker container ls
+    7  docker container ls -a 
+    8  docker container ls -a | wc -l
+    9  docker run busybox echo "Hello Amit -1"
+   10  docker container ls -a 
+   11  docker run busybox echo "Hello Amit -1"
+   12  docker container ls -a 
+   13  docker container ls 
+   14  docker container ls -a 
+   15  history 
+   16  ls
+   17  cd 02-Docker-Commands/
+   18  s
+   19  ls
+   20  history > Day1_History.txt 
+
+```
