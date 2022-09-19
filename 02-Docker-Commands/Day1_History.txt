@@ -21,3 +21,44 @@
    20  history > Day1_History.txt 
 
 ```
+
+```
+   29  docker ps 
+   30  docker ps -a 
+   31  docker container ls 
+   32  docker volume  ls 
+   33  ls -ltr /var/lib/docker/
+   34  du -sh /var/lib/docker/image/
+   35  ls
+   36  docker ps 
+   37  docker run ubuntu echo "Hello Ubuntu" 
+   38  docker ps 
+   39  docker ps -a 
+   40  docker run ubuntu echo "Hello Ubuntu 2" 
+   41  docker images 
+   42  docker pull amitvashist7/k8s-tiny-web
+   43  docker images 
+   44  cat /etc/os-release 
+   45  docker run ubuntu cat /etc/os-release
+   46* docker pull 
+   47  docker run ubuntu cat /etc/os-release
+   48  cat /etc/os-release 
+   49  docker version 
+   50  docker run ubuntu cat /etc/os-release
+   51  docker images 
+   52  docker run ubuntu:22.04 cat /etc/os-release
+   53  docker images 
+   54  docker run ubuntu:16.04 cat /etc/os-release
+   55  docker images 
+   56  docker pull amitvashist7/k8s-tiny-web:2 
+   57  docker images 
+   58  docker pull amitvashist7/k8s-tiny-web:3
+   59  docker images 
+   60  ls
+   61  cd 02-Docker-Commands/
+   62  ls
+   63  history 
+   64  cat Day1_History.txt 
+   65  history 
+   66  history >> Day1_History.txt 
+```
