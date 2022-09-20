@@ -1,0 +1,37 @@
+    1  docker images 
+    2  docker ps 
+    3  docker run -d --name job-1 amitvashist7/docker-k8s-ericsson-19-sept-2022 
+    4  docker ps 
+    5  docker inspect 71d71c9e4c66
+    6  curl "172.17.0.2"
+    7  curl 172.17.0.2:8080
+    8  ip addr 
+    9  route -n 
+   10  docker network ls 
+   11  docker network inspect 4d40ec4fd144
+   12  docker run -it --name network-test ubuntu:16.04 
+   13  ls
+   14  docker network inspect 4d40ec4fd144
+   15  docker ps 
+   16  netstat -tulnp 
+   17  docker run -d --name job-2 -p 8080:8080 amitvashist7/docker-k8s-ericsson-19-sept-2022 
+   18  docker ps 
+   19  netstat -tulnp 
+   20  systemctl status docker 
+   21  docker run -d --name job-3 -p 8081:8080 amitvashist7/docker-k8s-ericsson-19-sept-2022 
+   22  docker run -d --name job-4 -p 8081:8080 amitvashist7/docker-k8s-ericsson-19-sept-2022 
+   23  docker run -d --name job-5 -P amitvashist7/docker-k8s-ericsson-19-sept-2022 
+   24  docker ps 
+   25  docker image inspect amitvashist7/docker-k8s-ericsson-19-sept-2022
+   26  ls
+   27  cd docker-k8s-ericsson-19-Sept-2022/
+   28  ls
+   29  cd 02-Docker-Commands/
+   30  ls
+   31  history 
+   32  ls
+   33  cd ..
+   34  ls
+   35  mkdir 04-Docker-Network
+   36  cd 04-Docker-Network/
+   37  history > Day2_History.txt 
