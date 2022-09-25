@@ -1,0 +1,46 @@
+975  cd 19-Service-Discovery/
+  976  ls
+  977  kubectl  get pods
+  978  kubectl  get svc
+  979  kubectl  delete svc --all
+  980  kubectl  get svc
+  981  kubectl  get svc -n kube-system
+  982  ls
+  983  kubectl  get pods -n kube-system
+  984  kubectl  get pods -n kube-system -o wide
+  985  ls
+  986  cat 00-BusyBox.yaml
+  987  kubectl  apply -f 00-BusyBox.yaml
+  988  kubectl  get pods
+  989  kubectl  exec -it busybox -- cat /etc/resolv.conf
+  990  kubectl  exec -it busybox -- nslookup kube-dns
+  991  kubectl  exec -it busybox -- nslookup kube-dns.kube-system
+  992  ls
+  993  kubectl  apply -f 01-Secrets.yaml
+  994  kubectl  get secrets
+  995  cat 01-Secrets.yaml
+  996  vim 02-Database.yaml
+  997  kubectl  apply -f 02-Database.yaml
+  998  kubectl  get pods
+  999  ls
+ 1000  cat 03-Database-service.yml
+ 1001  kubectl  apply -f 03-Database-service.yml
+ 1002  ls
+ 1003  kubectl  get pods
+ 1004  kubectl  exec -it database -- env
+ 1005  kubectl  exec -it database -- mysql -u root -p
+ 1006  kubectl  exec -it busybox -- nslookup kubernetes
+ 1007  kubectl  exec -it busybox -- nslookup helloworld-db-service
+ 1008  kubectl  exec -it busybox -- nslookup database-service
+ 1009  ls
+ 1010  cat 04-Helloworld-app-deployment.yml
+ 1011  kubectl  get pods
+ 1012  kubectl  exec -it helloworld-deployment-7cccc97555-57ggw -- sh
+ 1013  ls
+ 1014  cat 04-Helloworld-app-deployment.yml
+ 1015  s
+ 1016  cd ..
+ 1017  ls
+ 1018  kubectl  apply -f 19-Service-Discovery/
+ 1019  ls
+ 1020  git add . ; git commit -m "02-K8s/18-Volume-NFS" ; git push
